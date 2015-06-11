@@ -1,5 +1,5 @@
 FROM tricahyana/httpd
-MAINTAINER Kasyfil Aziz <kasyfil.aziz@wgs.co.id>
+MAINTAINER Kasyfil Aziz Tri Cahyana <tricahyana@windowslive.com>
 
 RUN apt-get update && apt-get -y install git-core curl zlib1g-dev build-essential libssl-dev libreadline-dev libyaml-dev libsqlite3-dev sqlite3 libxml2-dev libxslt1-dev libcurl4-openssl-dev python-software-properties libffi-dev libgdbm-dev libncurses5-dev automake libtool bison libffi-dev apache2-threaded-dev libapr1-dev libaprutil1-dev
 
@@ -8,7 +8,7 @@ RUN gpg --keyserver hkp://keys.gnupg.net --recv-keys 409B6B1796C275462A170311380
 RUN curl -L https://get.rvm.io | bash -s stable
 RUN /usr/local/rvm/bin/rvm install jruby
 RUN bash -l -c "rvm use jruby --default"
-RUN bash -l -c "gem install passenger"
+RUN bash -l -c "gem install passenger -v 5.0.10"
 RUN bash -l -c "gem install bundler"
 
 # configure passanger and apache2
